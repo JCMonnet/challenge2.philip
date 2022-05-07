@@ -1,0 +1,122 @@
+:root,html [data-theme='light']{
+    --body-bck-col:#FFFFFF;
+    --head-col:#041821;
+    --head-bord:#041821;
+    --main-p-col:#041821;
+    --filtre-col:#041821;
+    --food-col:#1BD79E;
+    --food-bck-col:#DBFAF1;
+    --footer-col:#041821;
+}
+html [data-theme='dark']{
+    --body-bck-col:#041821;
+    --head-col:#FFFFFF;
+    --head-bord:#FFFFFF;
+    --main-p-col:#FFFFFF;
+    --filtre-col:#FFFFFF;
+    --food-col:#FFFFFF;
+    --food-bck-col:#1BD79E;
+    --footer-col:#FFFFFF;
+}
+
+
+@font-face {
+    font-family: 'YesevaOne';
+    src: url("font/Yeseva_One/YesevaOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("font/Montserrat/Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url("font/Montserrat/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-SemiBold";
+    src: url("font/Montserrat/Montserrat-SemiBold.ttf");
+}
+
+/* margin pour coller à la maquette car il semble y en avoir une */
+body {
+    background-color:var(--body-bck-col);
+    margin-left: 2%;
+    margin-right: 2%;
+
+}
+
+/* mise en flex pour obtention effet centré des deux élements. Et police demandée. Et petite bordure pour la "ligne" sur maquette */
+header {
+    font-family: "YesevaOne";
+    height: 147px;
+    color: var(--head-col);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--head-bord);
+}
+
+/* je decompose main p et #lorem pour les differences de taille de police. Et le strong pour l'effet background sur food */
+main p {
+    font-family: "YesevaOne";
+    color: var(--main-p-col);
+    font-size: 2em;
+}
+
+strong {
+    color: #1BD79E;
+}
+
+#lorem {
+    font-family: "Montserrat";
+    font-size: 1em;
+    color: #808080;
+}
+
+/* mise en flex pour effet en ligne. Et width 113% pour que "animal" soit coupé à "an" comme sur maquette. Et overflow x pour scroll latéral
+Et police demandée */
+#filtre {
+    width: 113%;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Montserrat-Medium";
+    color: var(--filtre-col);
+}
+
+/* id juste pour police differente et ajout background */
+#food {
+    font-family: "Montserrat-SemiBold";
+    color: var(--food-col);
+    background-color: var(--food-bck-col);
+}
+
+/* flex avec space evenly et wrap pour effet grille */
+#image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/* taille image fixée pour avoir toutes égales et margin bottom pour aérer */
+#image img {
+    width: 101px;
+    height: 101px;
+    margin-bottom: 5%;
+}
+/* flex pour effet centré */
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--footer-col);
+    font-size: 0.95em;
+}
+/* id pour respecter la difference de font size */
+#petit {
+    font-size: 0.8em;
+}
