@@ -58,7 +58,7 @@ header {
     justify-content: center;
     border-bottom: 1px solid var(--head-bord);
 }
-button {
+#lightmode {
    border-radius: 50%;
     background-color: #FFFFFF;
 }
@@ -81,6 +81,7 @@ strong {
 #filtre {
     display: flex;
     justify-content: space-around;
+    color: var(--filtre-col);
 }
 /* flex avec space evenly et wrap pour effet grille */
 #image {
