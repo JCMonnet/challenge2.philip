@@ -1,14 +1,4 @@
-:root,html [data-theme='light']{
-    --body-bck-col:#FFFFFF;
-    --head-col:#041821;
-    --head-bord:#041821;
-    --main-p-col:#041821;
-    --filtre-col:#041821;
-    --food-col:#1BD79E;
-    --food-bck-col:#DBFAF1;
-    --footer-col:#041821;
-}
-html [data-theme='dark']{
+:root,html[data-theme='dark']{
     --body-bck-col:#041821;
     --head-col:#FFFFFF;
     --head-bord:#FFFFFF;
@@ -18,7 +8,16 @@ html [data-theme='dark']{
     --food-bck-col:#1BD79E;
     --footer-col:#FFFFFF;
 }
-
+html[data-theme='light']{
+    --body-bck-col:#FFFFFF;
+    --head-col:#041821;
+    --head-bord:#041821;
+    --main-p-col:#041821;
+    --filtre-col:#041821;
+    --food-col:#1BD79E;
+    --food-bck-col:#DBFAF1;
+    --footer-col:#041821;
+}
 
 @font-face {
     font-family: 'YesevaOne';
@@ -59,7 +58,10 @@ header {
     justify-content: center;
     border-bottom: 1px solid var(--head-bord);
 }
-
+button {
+   border-radius: 50%;
+    background-color: #FFFFFF;
+}
 /* je decompose main p et #lorem pour les differences de taille de police. Et le strong pour l'effet background sur food */
 main p {
     font-family: "YesevaOne";
