@@ -1,22 +1,24 @@
-:root,html [data-theme='light']{
-    --body-bck-col:#FFFFFF;
-    --head-col:#041821;
-    --head-bord:#041821;
-    --main-p-col:#041821;
-    --filtre-col:#041821;
-    --food-col:#1BD79E;
-    --food-bck-col:#DBFAF1;
-    --footer-col:#041821;
+:root,
+html [data-theme='light'] {
+    --body-bck-col: #FFFFFF;
+    --head-col: #041821;
+    --head-bord: #041821;
+    --main-p-col: #041821;
+    --filtre-col: #041821;
+    --food-col: #1BD79E;
+    --food-bck-col: #DBFAF1;
+    --footer-col: #041821;
 }
-html [data-theme='dark']{
-    --body-bck-col:#041821;
-    --head-col:#FFFFFF;
-    --head-bord:#FFFFFF;
-    --main-p-col:#FFFFFF;
-    --filtre-col:#FFFFFF;
-    --food-col:#FFFFFF;
-    --food-bck-col:#1BD79E;
-    --footer-col:#FFFFFF;
+
+html [data-theme='dark'] {
+    --body-bck-col: #041821;
+    --head-col: #FFFFFF;
+    --head-bord: #FFFFFF;
+    --main-p-col: #FFFFFF;
+    --filtre-col: #FFFFFF;
+    --food-col: #FFFFFF;
+    --food-bck-col: #1BD79E;
+    --footer-col: #FFFFFF;
 }
 
 
@@ -42,7 +44,7 @@ html [data-theme='dark']{
 
 /* margin pour coller à la maquette car il semble y en avoir une */
 body {
-    background-color:var(--body-bck-col);
+    background-color: var(--body-bck-col);
     margin-left: 2%;
     margin-right: 2%;
 
@@ -76,18 +78,25 @@ strong {
     font-size: 1em;
     color: #808080;
 }
+#filtre {
+    display: flex;
+    justify-content: space-around
+}
+
 /* flex avec space evenly et wrap pour effet grille */
 #image {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 /* taille image fixée pour avoir toutes égales et margin bottom pour aérer */
 #image img {
     width: 101px;
     height: 101px;
     margin-bottom: 5%;
 }
+
 /* flex pour effet centré */
 footer {
     display: flex;
@@ -98,7 +107,31 @@ footer {
     color: var(--footer-col);
     font-size: 0.95em;
 }
+
 /* id pour respecter la difference de font size */
 #petit {
     font-size: 0.8em;
+}
+
+/* break point tablettes */
+/* @media (min-width: 768px) { ... } */
+@media (min-width:1920px) {
+
+    /* ajout marge gauche pour alignement avec le bloc image */
+    main p,
+    #lorem {
+        margin-left: 2.5%;
+    }
+
+    /* petite marge bottom pour "aérer" un peu */
+    #lorem {
+        margin-bottom: 3%;
+    }
+
+    /*je redimensione les images pour qu'elles soient carrées(height) et width de 30% pour en avoir 3 par ligne */
+    #image img {
+        width: 30%;
+        height: 552px;
+        margin-bottom: 2%;
+    }
 }
