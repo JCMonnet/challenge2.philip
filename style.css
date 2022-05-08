@@ -1,5 +1,4 @@
-:root,
-html[data-theme='dark'] {
+body {
     --body-bck-col: #041821;
     --head-col: #FFFFFF;
     --head-bord: #FFFFFF;
@@ -12,7 +11,7 @@ html[data-theme='dark'] {
     --footer-col: #FFFFFF;
 }
 
-html[data-theme='light'] {
+.light {
     --body-bck-col: #FFFFFF;
     --head-col: #041821;
     --head-bord: #041821;
