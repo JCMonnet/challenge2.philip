@@ -1,22 +1,28 @@
-:root,html[data-theme='dark']{
-    --body-bck-col:#041821;
-    --head-col:#FFFFFF;
-    --head-bord:#FFFFFF;
-    --main-p-col:#FFFFFF;
-    --filtre-col:#FFFFFF;
-    --food-col:#FFFFFF;
-    --food-bck-col:#1BD79E;
-    --footer-col:#FFFFFF;
+:root,
+html[data-theme='dark'] {
+    --body-bck-col: #041821;
+    --head-col: #FFFFFF;
+    --head-bord: #FFFFFF;
+    --lightmode-btn-bck:#041821;
+    --lightmode-btn-col:#FFFFFF;
+    --main-p-col: #FFFFFF;
+    --filtre-col: #FFFFFF;
+    --food-col: #FFFFFF;
+    --food-bck-col: #1BD79E;
+    --footer-col: #FFFFFF;
 }
-html[data-theme='light']{
-    --body-bck-col:#FFFFFF;
-    --head-col:#041821;
-    --head-bord:#041821;
-    --main-p-col:#041821;
-    --filtre-col:#041821;
-    --food-col:#1BD79E;
-    --food-bck-col:#DBFAF1;
-    --footer-col:#041821;
+
+html[data-theme='light'] {
+    --body-bck-col: #FFFFFF;
+    --head-col: #041821;
+    --head-bord: #041821;
+    --lightmode-btn-bck:#FFFFFF;
+    --lightmode-btn-col:#041821;
+    --main-p-col: #041821;
+    --filtre-col: #041821;
+    --food-col: #1BD79E;
+    --food-bck-col: #DBFAF1;
+    --footer-col: #041821;
 }
 
 @font-face {
@@ -41,7 +47,7 @@ html[data-theme='light']{
 
 /* margin pour coller à la maquette car il semble y en avoir une */
 body {
-    background-color:var(--body-bck-col);
+    background-color: var(--body-bck-col);
     margin-left: 2%;
     margin-right: 2%;
 
@@ -58,10 +64,20 @@ header {
     justify-content: center;
     border-bottom: 1px solid var(--head-bord);
 }
+
 #lightmode {
-   border-radius: 50%;
-    background-color: #FFFFFF;
+    height: 30px;
+    background-color:var(--lightmode-btn-bck);
+    border-style: none;
+    color: var(--lightmode-btn-col);
+    transition: transform 2s; 
 }
+#lightmode:hover {
+    transform: rotate(360deg);
+    color: #1BD79E;
+}
+
+
 /* je decompose main p et #lorem pour les differences de taille de police. Et le strong pour l'effet background sur food */
 main p {
     font-family: "YesevaOne";
@@ -78,23 +94,27 @@ strong {
     font-size: 1em;
     color: #808080;
 }
+
 #filtre {
     display: flex;
     justify-content: space-around;
     color: var(--filtre-col);
 }
+
 /* flex avec space evenly et wrap pour effet grille */
 #image {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 /* taille image fixée pour avoir toutes égales et margin bottom pour aérer */
 #image img {
     width: 101px;
     height: 101px;
     margin-bottom: 5%;
 }
+
 /* flex pour effet centré */
 footer {
     display: flex;
@@ -105,10 +125,12 @@ footer {
     color: var(--footer-col);
     font-size: 0.95em;
 }
+
 /* id pour respecter la difference de font size */
 #petit {
     font-size: 0.8em;
 }
+
 /* break point tablettes */
 /* @media (min-width: 768px) { ... } */
 @media (min-width:1920px) {

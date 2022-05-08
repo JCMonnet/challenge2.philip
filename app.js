@@ -1,13 +1,13 @@
-var toggle = document.getElementById("lightmode");
-console.log('toggle');
-var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+let toggle = document.getElementById("lightmode");
+
+let storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 if (storedTheme)
     document.documentElement.setAttribute('data-theme', storedTheme)
 
 
 toggle.onclick = function() {
-    var currentTheme = document.documentElement.getAttribute("data-theme");
-    var targetTheme = "dark";
+    let currentTheme = document.documentElement.getAttribute("data-theme");
+    let targetTheme = "dark";
 
     if (currentTheme === "dark") {
         targetTheme = "light";
@@ -15,4 +15,4 @@ toggle.onclick = function() {
 
     document.documentElement.setAttribute('data-theme', targetTheme)
     localStorage.setItem('theme', targetTheme);
-};
+}
