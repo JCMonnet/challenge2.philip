@@ -1,11 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     --body-bck-col: #041821;
     --head-col: #FFFFFF;
     --head-bord: #FFFFFF;
-    --lightmode-btn-bck:#041821;
-    --lightmode-btn-col:#FFFFFF;
+    --lightmode-btn-bck: #041821;
+    --lightmode-btn-col: #FFFFFF;
     --main-p-col: #FFFFFF;
-    --filtre-col: #FFFFFF;
+    --btn-col: #FFFFFF;
+    --btn-bck: #041821;
     --food-col: #FFFFFF;
     --food-bck-col: #1BD79E;
     --footer-col: #FFFFFF;
@@ -15,10 +22,11 @@ body {
     --body-bck-col: #FFFFFF;
     --head-col: #041821;
     --head-bord: #041821;
-    --lightmode-btn-bck:#FFFFFF;
-    --lightmode-btn-col:#041821;
+    --lightmode-btn-bck: #FFFFFF;
+    --lightmode-btn-col: #041821;
     --main-p-col: #041821;
-    --filtre-col: #041821;
+    --btn-bck: #FFFFFF;
+    --btn-col: #041821;
     --food-col: #1BD79E;
     --food-bck-col: #DBFAF1;
     --footer-col: #041821;
@@ -64,13 +72,26 @@ header {
     border-bottom: 1px solid var(--head-bord);
 }
 
+header nav i {
+    margin: .5em .5em;
+}
+span {
+    color: #1BD79E;
+}
+
+main {
+    margin: auto;
+    width: 90%;
+}
+
 #lightmode {
     height: 30px;
-    background-color:var(--lightmode-btn-bck);
+    background-color: var(--lightmode-btn-bck);
     border-style: none;
     color: var(--lightmode-btn-col);
-    transition: transform 2s; 
+    transition: transform 2s;
 }
+
 #lightmode:hover {
     transform: rotate(360deg);
     color: #1BD79E;
@@ -82,6 +103,7 @@ main p {
     font-family: "YesevaOne";
     color: var(--main-p-col);
     font-size: 2em;
+    margin: 1em 0;
 }
 
 strong {
@@ -92,26 +114,42 @@ strong {
     font-family: "Montserrat";
     font-size: 1em;
     color: #808080;
+    margin: 1em 0;
 }
 
 #filtre {
     display: flex;
-    justify-content: space-around;
-    color: var(--filtre-col);
+    justify-content: space-between;
+    margin-bottom: 1em;
+    /* color: var(--filtre-col); */
 }
 
-/* flex avec space evenly et wrap pour effet grille */
-#image {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+main nav button {
+    background-color: var(--body-bck-col);
+    border-style: none;
+    color: var(--btn-col);
+    letter-spacing: .25em;
+    padding: 0.5em;
 }
 
-/* taille image fixée pour avoir toutes égales et margin bottom pour aérer */
-#image img {
-    width: 101px;
-    height: 101px;
-    margin-bottom: 5%;
+main nav button:nth-child(2) {
+    background-color: var(--food-bck-col);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: .5em;
+}
+
+.grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid img:nth-child(n+10) {
+    display: none;
 }
 
 /* flex pour effet centré */
@@ -122,7 +160,12 @@ footer {
     justify-content: center;
     align-items: center;
     color: var(--footer-col);
-    font-size: 0.95em;
+    font-size: 0.75em;
+    margin: 5% 0 5% 0;
+}
+
+footer p:last-child {
+    font-size: 0.62em;
 }
 
 /* id pour respecter la difference de font size */
@@ -131,24 +174,72 @@ footer {
 }
 
 /* break point tablettes */
-/* @media (min-width: 768px) { ... } */
-@media (min-width:1920px) {
-
-    /* ajout marge gauche pour alignement avec le bloc image */
-    main p,
-    #lorem {
-        margin-left: 2.5%;
+@media screen and (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1em;
     }
 
-    /* petite marge bottom pour "aérer" un peu */
-    #lorem {
-        margin-bottom: 3%;
+    main {
+        width: 80%;
     }
 
-    /*je redimensione les images pour qu'elles soient carrées(height) et width de 30% pour en avoir 3 par ligne */
-    #image img {
-        width: 30%;
-        height: 552px;
-        margin-bottom: 2%;
+    main h2 {
+        font-size: 3em;
+    }
+
+    #filtre {
+        justify-content: center;
+        gap: 1em;
+    }
+
+    .grid {
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: .5em;
+    }
+
+    .grid img {
+        width: 100%;
+        height: 10vh;
+    }
+
+    .grid img:nth-child(n+10) {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+max-width: 1200px;
+    }
+
+    main h2,
+    main p {
+        width: 60%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat (3, 25vh);
+        gap: 1em;
+    }
+
+    .grid img {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .grid img:nth-child(1) {
+        grid-column: span 2;
+    }
+    .grid img:nth-child(6){
+        grid-column: span 2;
+    }
+    .grid img:nth-child(7){
+        grid-column: span 2;
+    }
+    .grid img:nth-child(n+10){
+        display: none;
     }
 }

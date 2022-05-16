@@ -16,13 +16,13 @@
 <body>
     <!-- organisé avec un h1 pour le nom et une div contenant toutes les images (en prevision du flex css) -->
     <header>
-        <h1>Bradley Jackson</h1>
-        <div>
+        <h1>Bradley Jackson<span>.</span></h1>
+        <nav>
             <i class="fa-brands fa-facebook fa-2x"></i>
             <i class="fa-brands fa-twitter fa-2x"></i>
             <i class="fa-brands fa-linkedin-in fa-2x"></i>
             <button id="lightmode" ><i class="fa-solid fa-circle-half-stroke fa-2x" alt="bouton dark light mode"></i></button>
-        </div>
+        </nav>
 
 
     </header>
@@ -30,19 +30,18 @@
     <main>
         <p>Hello,<br>
         Je suis photographe d'art, <strong>créative & engagée.</strong>
-        </p>
+        <p>
         <p id="lorem">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis augue magna. Fusce fringilla purus et sapien euismod ullamcorper. In lorem tellus, sollicitudin in feugiat sed, sodales vel leo.  
         </p>
-    </main>
-    <div id="filtre">
-        <p>NATURE</p>
-        <p>FOOD</p>
-        <p>ART</p>
-        <p>STREET</p>
-        <p>ANIMAL</p>
-    </div>
-    <div id="image">
+    <nav id="filtre">
+        <button>NATURE</button>
+        <button>FOOD</button>
+        <button>ART</button>
+        <button>STREET</button>
+        <button>ANIMAL</button>
+    </nav>
+    <section class="grid">
         <img src="images/food9.avif" alt="photo plat de saumon">
         <img src="images/food8.avif" alt="photo salade de fruits">
         <img src="images/food7.avif" alt="photo petit dejeuner">
@@ -52,10 +51,17 @@
         <img src="images/food3.avif" alt="photo plat de spaghettis">
         <img src="images/food2.avif" alt="photo de glaces roses">
         <img src="images/food1.avif" alt="photo d'une partie d'une assiette viande et légumes">
-    </div>
+        <img src="images/food1.avif" alt="photo d'une partie d'une assiette viande et légumes">
+        <img src="images/food1.avif" alt="photo d'une partie d'une assiette viande et légumes">
+        <img src="images/food1.avif" alt="photo d'une partie d'une assiette viande et légumes">
+        <img src="images/food1.avif" alt="photo d'une partie d'une assiette viande et légumes">
+        <img src="images/food1.avif" alt="photo d'une partie d'une assiette viande et légumes">
+        <img src="images/food1.avif" alt="photo d'une partie d'une assiette viande et légumes">
+    </section>
+</main>
     <footer>
         <p>@2021 BRADLEY JACKSON</p>
-        <p id="petit">MADE FOR TUTO.COM</p>
+        <p>MADE FOR TUTO.COM</p>
     </footer>
     <script src="app.js"></script>
 </body>
